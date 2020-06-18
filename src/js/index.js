@@ -6,17 +6,23 @@ var close = document.querySelector('.close');
 
 show.addEventListener('click', function(){
     popup.classList.add('visible')
-    show.style.display='none'; // hide CLICK ME! button to prevent show it in responsive view
+    if (popup.className == 'popup visible') {   //if login form is appear, CLICK ME button is hidding to prevent see it in responsive view
+        show.style.display='none'
+    }
+    
 });
 
 close.addEventListener('click', function(){
     popup.classList.remove('visible')
+    show.style.display='block'                  //show CLICK ME when user click on "X" button
 });
 
 
 var form = document.querySelector('.form');
 var email = document.querySelector('#email');
 var password = document.querySelector('#password');
+
+var success = document.querySelector('.success'); //THANK YOU! message
 
 
 form.addEventListener('submit', function(e){
@@ -26,5 +32,11 @@ form.addEventListener('submit', function(e){
     }
     if(password.value == '') {
         alert('Please provide your password')
-    }
+    }else {
+        setTimeout(function() {
+            popup.style.display='none';
+            show.style.display='none'
+            success.style.display='block';
+    }, 3000);
+}
 });
