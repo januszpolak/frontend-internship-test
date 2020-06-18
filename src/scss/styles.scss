@@ -1,2 +1,55 @@
 // Here goes your CSS
 @import 'layout/main';
+
+.popup {
+    display: none;
+}
+
+.visible {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    height: auto;
+   
+    transition:0.5s;
+    form {
+        display: flex;
+        flex-direction: column; 
+        background-color: #fff;
+        border-radius: 2%;
+        padding: 5% 10%;
+        
+    }.close{
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(50%, -50%);
+        color: white;
+        background-color: black;
+        border-radius: 50%;
+        padding: 3px 5px;
+        font-weight: bold;
+        cursor: pointer;
+    }p{
+        text-align: center;
+        font-family: 'Lobster', sans-serif;
+        font-size: 25px;
+    }input{
+        padding: 5% 0;
+        margin: 5% 0;
+    }button {
+        margin: 5% 0;
+        padding: 5% 0;
+        background-color: black;
+        color: white;
+        transition: all 0.5s;
+        border: none;
+        &:hover{
+            background-color: rgb(250, 117, 117);
+            color: black;
+        }
+    }
+}
